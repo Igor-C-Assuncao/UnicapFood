@@ -8,15 +8,13 @@ public class Cliente {
     
     
     public Cliente(String nome, int[] cpf, String senha) {
-        
-        
         this.nome = nome;
         this.cpf = new int[11];
         this.senha = senha;
     }
 
     
-        }
+}
 
 
 
