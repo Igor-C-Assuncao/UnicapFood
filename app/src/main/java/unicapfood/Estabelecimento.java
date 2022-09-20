@@ -3,6 +3,6 @@ package unicapfood;
 public interface Estabelecimento {
 
     private String nome; 
-    private 
+    private String endereco;
     
 }
