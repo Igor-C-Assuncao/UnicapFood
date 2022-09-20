@@ -15,13 +15,13 @@ public class Ferramentas {
     }
 
     public void inserirCliente(Cliente cliente) { 
-        // verifica, usando o "buscar", se o aluno já é cadastrado.
+        // verifica, usando o "buscar", se o Cliente já é cadastrado.
         LSENode aux = this.primeiro;
         LSENode result = this.buscar(cliente);
         if (result != null){
-            System.out.println("Aluno já está na lista!");
+            System.out.println("O Cliente já está na lista!");
         } else {
-            // insere um novo aluno no final de lista de alunos
+            // insere um novo cliente no final de lista
             LSENode novo = new LSENode(cliente);
             if (this.isEmpty() == true) {
                 this.primeiro = novo;
@@ -31,18 +31,13 @@ public class Ferramentas {
                 }
                 aux.setProx(novo);
             }
-            System.out.println("Inserção efetuada!");
+            System.out.println("Cadastro efetuado!");
         }
     }
 
     public void inserirPedido(Pedido pedido) { 
-        // verifica, usando o "buscar", se o aluno já é cadastrado.
         LSENode aux = this.primeiro;
-        LSENode result = this.buscar(pedido);
-        if (result != null){
-            System.out.println("Aluno já está na lista!");
-        } else {
-            // insere um novo aluno no final de lista de alunos
+            // insere um novo item no final de lista de pedidos / na comanda
             LSENode novo = new LSENode(pedido);
             if (this.isEmpty() == true) {
                 this.primeiro = novo;
