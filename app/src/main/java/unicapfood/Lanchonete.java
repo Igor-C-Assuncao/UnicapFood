@@ -1,6 +1,6 @@
 package unicapfood;
 
-public class Lanchonete extends Estabelecimento{
+public class Lanchonete implements Estabelecimento{
     private String nome;
     
 }
