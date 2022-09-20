@@ -39,7 +39,7 @@ public class MenuApp {
                 case 0: System.out.println("Tchau! Obrigada por utilizar nosso app!!");
                         break;
                 default: System.out.println("Opção inválida");
-            }           
+            }
         } while (op != 0);
     }
     public static void exibeMenu() {
