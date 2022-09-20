@@ -2,11 +2,19 @@ package unicapfood.Pagamentos;
 
 public class Debito implements ValidarPagamento{
 
+    private String bandeira;
+    private double valor;
+    private boolean cartaoAceito;
     
     @Override
     public boolean statusDoPagamento() {
-        // TODO Auto-generated method stub
-        return true;
+        if(cartaoAceito){
+
+            return true;
+            
+        }else{
+            return false;
+        }
     }
     
 }
