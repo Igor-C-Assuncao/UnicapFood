@@ -1,5 +1,7 @@
 package unicapfood;
 
+import unicapfood.Ferramentas.LSENode;
+
 public class Ferramentas {
     // Atributo
     private LSENode primeiro;

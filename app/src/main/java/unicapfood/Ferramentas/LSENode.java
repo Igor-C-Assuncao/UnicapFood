@@ -1,6 +1,10 @@
-package unicapfood;
+package unicapfood.Ferramentas;
+
+import unicapfood.Cliente;
+import unicapfood.Pedido;
 
 public class LSENode {
+    public static LSENode primeiro;
     // Atributos
     private Cliente info;
     private Pedido item;
@@ -39,4 +43,21 @@ public class LSENode {
     public Pedido getItem() {
         return this.item;
     }    
+
+    public LSENode buscar(Pedido pedido) {
+        LSENode aux;
+        if (IsEmpty.isEmpty() == true) {
+            return null;
+        } else {
+            aux = LSENode.primeiro;
+            while (aux != null) {
+                if (aux.getInfo().compareTo(pedido) == 0) {
+                    return aux;
+                } else {
+                    aux = aux.getProx();
+                }
+            }
+            return null;
+        }
+    }
 }
