@@ -24,7 +24,7 @@ public class MenuApp {
     }
     public static void exibeMenu() {
         System.out.println("Opções:");
-        System.out.println("1 - Calcular perimetro de um quadrilátero");
-        System.out.println("2 - Calcular área de um quadrilátero");
+        System.out.println("1 - ");
+        System.out.println("2 - ");
     }
 }
