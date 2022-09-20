@@ -49,7 +49,7 @@ public class Ferramentas {
             }
             System.out.println("Inserção efetuada!");
         }
-    }
+    
 
     public LSENode buscar(Pedido pedido) {
         LSENode aux;
@@ -68,32 +68,6 @@ public class Ferramentas {
         }
     }
 
-    public void removerPrimeiro(){
-        LSENode aux = this.primeiro;
-
-        if(this.isEmpty() == true){
-            System.out.println("Lista Vazia!");
-        } else {
-            aux = aux.getProx();
-            this.primeiro = aux;
-        }
-    }
-
-    public void removerUltimo(){
-        LSENode aux = this.primeiro;
-        LSENode provUltimo = null;
-
-        if(this.isEmpty() == true){
-            System.out.println("Lista Vazia!");
-        } else {
-            while (aux.getProx() != null){
-                provUltimo = aux;
-                aux = aux.getProx();
-            }
-            provUltimo.setProx(null);
-        }
-    }
-
     public void exibir() {
         // exibe o conteúdo de todos os nós da lista
         LSENode aux;
@@ -108,55 +82,27 @@ public class Ferramentas {
         }
     }
 
-    public void exibirEspecifico(Aluno al){
-        if (this.isEmpty() == true) {
-            System.out.println("Lista vazia!");
-        } else if (al.getMatr() != null) {
-            System.out.println(al.getMatr() + " " +  al.getNome() + " " + al.getMedia() + " " + al.getFaltas());
-        }
-        
-    }
-
-    public void inserirNovaMedia(String nome, String matr, double media){
-        Aluno aluno = new Aluno(matr, nome);
-        if (this.isEmpty() == true) {
-            System.out.println("Aluno inválido!");
-        } else if (matr != null) {
-            aluno.setMedia(media);
-        }
-        System.out.println(aluno.getMedia());
-    }
-
-    public void inserirNovasFaltas(Aluno al, int faltas){
-        if (this.isEmpty() == true) {
-            System.out.println("Aluno inválido!");
-        } else if (al.getMatr() != null) {
-            al.setFaltas(faltas);
-        }
-        System.out.println(al.getFaltas());
-    }
-
     public void removerAlunoEspecifico(){
-        Aluno proc = new Aluno(matr);
+        Pedido pd = new Pedido(item);
         LSENode atual, anterior;
         if (this.isEmpty() == true) {
             System.out.println("Lista vazia!");
         } else if (this.primeiro.getProx() == null) {
-            if (proc.compareTo(this.primeiro.getInfo()) == 0) {
+            if (pd.compareTo(this.primeiro.getInfo()) == 0) {
                 this.primeiro = null;
                 System.out.println("Remoção efetuada");
             } else {
                 System.out.println("Aluno não encontrado!");
             }
         } else { // lista com mais de um nó
-            if (proc.compareTo(this.primeiro.getInfo()) == 0) { // remoção do primeiro
+            if (pd.compareTo(this.primeiro.getInfo()) == 0) { // remoção do primeiro
                 this.primeiro = this.primeiro.getProx();
                 System.out.println("Remoção efetuada");
             } else {
                 anterior = null;
                 atual = this.primeiro;
                 while (atual != null) {
-                   if (atual.getInfo().compareTo(proc) != 0 ) {
+                   if (atual.getInfo().compareTo(pd) != 0 ) {
                     anterior = atual;
                     atual = atual.getProx();
                    }
@@ -174,5 +120,4 @@ public class Ferramentas {
             }
         }
     }
-}
 }
