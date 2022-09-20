@@ -5,7 +5,7 @@ public class Ferramentas {
     private LSENode primeiro;
 
     // Métodos públicos
-    public boolean isEmpty() { 
+    public boolean isEmpty() {
         // testa se a lista está vazia
         if (this.primeiro == null) {
             return true;
@@ -14,11 +14,11 @@ public class Ferramentas {
         }
     }
 
-    public void inserirCliente(Cliente cliente) { 
+    public void inserirCliente(Cliente cliente) {
         // verifica, usando o "buscar", se o Cliente já é cadastrado.
         LSENode aux = this.primeiro;
         LSENode result = this.buscar(cliente);
-        if (result != null){
+        if (result != null) {
             System.out.println("O Cliente já está na lista!");
         } else {
             // insere um novo cliente no final de lista
@@ -26,7 +26,7 @@ public class Ferramentas {
             if (this.isEmpty() == true) {
                 this.primeiro = novo;
             } else {
-                while (aux.getProx() != null){
+                while (aux.getProx() != null) {
                     aux = aux.getProx();
                 }
                 aux.setProx(novo);
@@ -35,21 +35,20 @@ public class Ferramentas {
         }
     }
 
-    public void inserirPedido(Pedido pedido) { 
+    public void inserirPedido(Pedido pedido) {
         LSENode aux = this.primeiro;
-            // insere um novo item no final de lista de pedidos / na comanda
-            LSENode novo = new LSENode(pedido);
-            if (this.isEmpty() == true) {
-                this.primeiro = novo;
-            } else {
-                while (aux.getProx() != null){
-                    aux = aux.getProx();
-                }
-                aux.setProx(novo);
+        // insere um novo item no final de lista de pedidos / na comanda
+        LSENode novo = new LSENode(pedido);
+        if (this.isEmpty() == true) {
+            this.primeiro = novo;
+        } else {
+            while (aux.getProx() != null) {
+                aux = aux.getProx();
             }
-            System.out.println("Inserção efetuada!");
+            aux.setProx(novo);
         }
-    
+        System.out.println("Inserção efetuada!");
+    }
 
     public LSENode buscar(Pedido pedido) {
         LSENode aux;
@@ -59,6 +58,23 @@ public class Ferramentas {
             aux = this.primeiro;
             while (aux != null) {
                 if (aux.getInfo().compareTo(pedido) == 0) {
+                    return aux;
+                } else {
+                    aux = aux.getProx();
+                }
+            }
+            return null;
+        }
+    }
+
+    public LSENode buscar(Cliente cliente) {
+        LSENode aux;
+        if (this.isEmpty() == true) {
+            return null;
+        } else {
+            aux = this.primeiro;
+            while (aux != null) {
+                if (aux.getInfo().compareTo(cliente) == 0) {
                     return aux;
                 } else {
                     aux = aux.getProx();
@@ -82,7 +98,7 @@ public class Ferramentas {
         }
     }
 
-    public void removerAlunoEspecifico(){
+    public void removerAlunoEspecifico() {
         Pedido pd = new Pedido(item);
         LSENode atual, anterior;
         if (this.isEmpty() == true) {
@@ -102,18 +118,16 @@ public class Ferramentas {
                 anterior = null;
                 atual = this.primeiro;
                 while (atual != null) {
-                   if (atual.getInfo().compareTo(pd) != 0 ) {
-                    anterior = atual;
-                    atual = atual.getProx();
-                   }
-                   else {
-                       break; // achou!!!
-                   }
+                    if (atual.getInfo().compareTo(pd) != 0) {
+                        anterior = atual;
+                        atual = atual.getProx();
+                    } else {
+                        break; // achou!!!
+                    }
                 }
                 if (atual == null) {
                     System.out.println("Valor não pertence a lidta!");
-                }
-                else {
+                } else {
                     anterior.setProx(atual.getProx());
                     System.out.println("Remoção efetuada!");
                 }
