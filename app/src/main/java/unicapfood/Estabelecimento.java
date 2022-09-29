@@ -1,5 +1,5 @@
 package unicapfood;
 
-public interface Estabelecimento {
+public interface IEstabelecimento {
 
 }
