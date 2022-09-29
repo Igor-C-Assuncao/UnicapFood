@@ -1,6 +1,6 @@
 package unicapfood;
 
-public class Restaurante extends Estabelecimento {
+public class Restaurante extends IEstabelecimento {
     
     
 }

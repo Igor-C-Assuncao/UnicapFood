@@ -1,7 +1,11 @@
 package unicapfood;
 
 public class Pedido implements Comparable <Pedido>{
+    
     private String item;
+    private int numero;
+    private double preco;
+
 
     public Pedido(String item) {
         this.item = item;
