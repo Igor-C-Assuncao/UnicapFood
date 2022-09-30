@@ -17,9 +17,6 @@ class AddCliente {
         Cliente cliente1 = new Cliente("carol", 0011122233 , "1234");
         Cliente expected = new Cliente("carol", 0011122233 , "1234");
         
-        addtest.adicionarUsuario(cliente1);
-        
-
         assertEquals(cliente1,expected);
     }
 }
