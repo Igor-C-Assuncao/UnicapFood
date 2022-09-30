@@ -7,8 +7,12 @@ public class Pedido implements Comparable <Pedido>{
     private double preco;
 
 
-    public Pedido(String item) {
+   
+
+    public Pedido(String item, int numero, double preco) {
         this.item = item;
+        this.numero = numero;
+        this.preco = preco;
     }
 
     public String getItem() {
@@ -23,5 +27,21 @@ public class Pedido implements Comparable <Pedido>{
         int result;
         result = this.getItem().compareTo(pedido.getItem());
         return result;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
