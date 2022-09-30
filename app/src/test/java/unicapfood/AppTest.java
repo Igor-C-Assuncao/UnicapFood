@@ -4,11 +4,14 @@
 package unicapfood;
 
 import org.junit.jupiter.api.Test;
+
+import unicapfood.Clientes.GerenciarCliente;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        GerenciarCliente classUnderTest = new GerenciarCliente();
+        // assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 }
