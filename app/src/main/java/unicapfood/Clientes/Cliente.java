@@ -3,13 +3,13 @@ package unicapfood.Clientes;
 public class Cliente {
 
     private String nome;
-    private int[] cpf;
+    private int cpf;
     private String senha;
     
     
-    public Cliente(String nome, int[] cpf, String senha) {
+    public Cliente(String nome, int cpf, String senha) {
         this.nome = nome;
-        this.cpf = new int[11];
+        this.cpf = cpf;
         this.senha = senha;
     }
 
@@ -24,12 +24,12 @@ public class Cliente {
     }
 
 
-    public int[] getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
 
-    public void setCpf(int[] cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

@@ -30,5 +30,14 @@ public class GerenciarCliente {
         }
       }
 
+
+
+
+
+    @Override
+    public String toString() {
+      return "GerenciarCliente [clienteLista=" + clienteLista + "]";
+    }
+
   
 }

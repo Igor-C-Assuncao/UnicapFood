@@ -5,13 +5,21 @@ package unicapfood;
 
 import org.junit.jupiter.api.Test;
 
+import unicapfood.Clientes.Cliente;
 import unicapfood.Clientes.GerenciarCliente;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
-    @Test void appHasAGreeting() {
-        GerenciarCliente classUnderTest = new GerenciarCliente();
-        // assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+class AddCliente {
+    
+    @Test void clienteAdd() {
+        GerenciarCliente addtest = new GerenciarCliente();
+        Cliente cliente1 = new Cliente("carol", 0011122233 , "1234");
+        Cliente expected = new Cliente("carol", 0011122233 , "1234");
+        
+        addtest.adicionarUsuario(cliente1);
+        
+
+        assertEquals(cliente1,expected);
     }
 }
