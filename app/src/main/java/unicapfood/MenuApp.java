@@ -6,20 +6,27 @@ public class MenuApp {
         Scanner in = new Scanner (System.in);
         
         int op;
-        String nomeCliente;
+        String nomeCliente, cpf, pedido;
+        int nComanda = 0;
 
         do {
             exibeMenu();
             op = in.nextInt(); in.nextLine();
             switch (op) {
                 case 1: //cadastro do cliente (criar lista de clientes)
-                        System.out.println("");
+                        System.out.println("Insira seu nome: ");
+                        nomeCliente = in.nextLine();
+                        System.out.println("Insira seu CPF: ");
+                        cpf = in.nextLine();
                         break;
                 case 2: //gerar comanda (gerar um número novo aleatório ou no contador)
-                        System.out.println("");
+                        nComanda = nComanda + 1;
+                        System.out.println("O número da sua comanda será: "+ nComanda);
                         break;
                 case 3: //realizar pedido (adicionar um item novo no final da lista)
-                        System.out.println("");
+                        System.out.println("Insira seu pedido: ");
+                        pedido = in.nextLine();
+
                         break;
                 case 4: //ver carpadio 
                         System.out.println("");
