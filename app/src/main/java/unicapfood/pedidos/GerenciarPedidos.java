@@ -10,10 +10,6 @@ public class GerenciarPedidos {
       this.listaDePedidos = new ArrayList();
     }
     
-
-
-   
-    
     public boolean pedidoExistente(int numero){
       for(Pedido checarPedido: listaDePedidos  ){
         if (checarPedido.getNumero() == numero ){
@@ -23,7 +19,7 @@ public class GerenciarPedidos {
       return false;
     }
 
-    public void adicionarUsuario(Pedido pedidoNovo){
+    public void adicionarPedido(Pedido pedidoNovo){
 
       if (!pedidoExistente(pedidoNovo.getNumero())){
           listaDePedidos.add(new Pedido(pedidoNovo.getItem(),pedidoNovo.getNumero(), pedidoNovo.getPreco()));
