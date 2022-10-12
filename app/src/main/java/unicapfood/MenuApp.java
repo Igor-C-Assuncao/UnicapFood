@@ -19,13 +19,14 @@ public class MenuApp {
 
         int op;
         String nomeCliente, pedido, senha;
+        Cliente clienteNovo;
         int cpf;
         int nComanda = 0;
 
         do {
             exibeMenu();
             op = in.nextInt(); in.nextLine();
-            switch (op) {
+        switch (op) {
                 case 1: //cadastro do cliente (criar lista de clientes)
                         System.out.println("Insira seu nome: ");
                         nomeCliente = in.nextLine();
