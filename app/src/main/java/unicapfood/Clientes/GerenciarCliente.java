@@ -10,10 +10,6 @@ public class GerenciarCliente {
       this.clienteLista = new ArrayList();
     }
     
-
-
-   
-    
     public boolean clienteExistente(String nome){
       for(Cliente checarCLiente:clienteLista ){
         if (checarCLiente.getNome() == nome ){
@@ -30,14 +26,8 @@ public class GerenciarCliente {
         }
       }
 
-
-
-
-
     @Override
     public String toString() {
       return "GerenciarCliente [clienteLista=" + clienteLista + "]";
     }
-
-  
 }
