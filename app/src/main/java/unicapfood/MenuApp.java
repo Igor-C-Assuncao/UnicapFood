@@ -1,12 +1,25 @@
 package unicapfood;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import unicapfood.Clientes.Cliente;
+import unicapfood.Estabelecimento.IEstabelecimento;
+import unicapfood.Itens.Itens;
+import unicapfood.pedidos.Pedido;
 
 public class MenuApp {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
         
+        ArrayList<Cliente> clienteLista;
+        ArrayList<Pedido> listaDePedidos;
+        ArrayList<IEstabelecimento> estabelecimentoLista;
+        ArrayList<Itens> listaDeItens;
+        
+
         int op;
-        String nomeCliente, cpf, pedido;
+        String nomeCliente, pedido, senha;
+        int cpf;
         int nComanda = 0;
 
         do {
@@ -17,7 +30,11 @@ public class MenuApp {
                         System.out.println("Insira seu nome: ");
                         nomeCliente = in.nextLine();
                         System.out.println("Insira seu CPF: ");
-                        cpf = in.nextLine();
+                        cpf = in.nextInt();
+                        System.out.println("Insira sua senha: ");
+                        senha = in.nextLine();
+                        clienteNovo = new Cliente(nomeCliente, cpf, senha);
+                        clienteLista.adicionarUsuario(clienteNovo);
                         break;
                 case 2: //gerar comanda (gerar um número novo aleatório ou no contador)
                         nComanda = nComanda + 1;
@@ -29,10 +46,10 @@ public class MenuApp {
 
                         break;
                 case 4: //ver carpadio 
-                        System.out.println("");
+                        System.out.println("Cardapio: ");
                         break;
                 case 5: //exibir a parcial (mostrar todos os itens pedidos até o momento)
-                        System.out.println("");
+                        System.out.println("Parcial da comanda "+ nComanda + ":");
                         break;
                 case 6: //fechar a comanda (exibir a conta até o momento e trancar para não realizar mais pedidos)
                         System.out.println("");
@@ -41,7 +58,8 @@ public class MenuApp {
                         System.out.println("");
                         break;
                 case 8: //cancelar pedido (remover algum item da lista) 
-                        System.out.println("");
+                        System.out.println("Insira qual item você gostaria de retirar: ");
+
                         break;
                 case 0: System.out.println("Tchau! Obrigada por utilizar nosso app!!");
                         break;
