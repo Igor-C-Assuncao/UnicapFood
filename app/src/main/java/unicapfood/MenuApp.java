@@ -17,9 +17,8 @@ public class MenuApp {
         ArrayList<IEstabelecimento> estabelecimentoLista;
         ArrayList<Itens> listaDeItens;
         
-
         int op, op2;
-        String nomeCliente, pedidoNovo, senha;
+        String nomeCliente, pedidoNovo, senha, pedido;
         Comanda comanda;
         Cliente clienteNovo;
         Itens carpadio;
@@ -46,7 +45,6 @@ public class MenuApp {
                         System.out.println("Insira seu cpf: ");
                         cpf = in.nextInt();
                         System.out.println("O número da sua comanda será: "+ nComanda);
-                        comanda.setNumero(nComanda);
                         comanda = new Comanda(cpf, nComanda);
                         break;
                 case 3: //realizar pedido (adicionar um item novo no final da lista)
@@ -74,22 +72,22 @@ public class MenuApp {
 
                         switch (op2) {
                                 case 1: //pagamento no crédito
-                                        
+                                        System.out.println("Pagamento Aprovado");
                                         break;
                                 case 2: //pagamento no dédito
-                                        
+                                        System.out.println("Pagamento Aprovado");
                                         break;
                                 case 3: //pagamento no pix
-                                        
+                                        System.out.println("Pagamento Aprovado");
                                         break;
                                 default: System.out.println("Opção inválida!");
                                         break;
                         }
-
                         break;
                 case 7: //cancelar pedido (remover algum item da lista) 
                         System.out.println("Insira qual item você gostaria de retirar: ");
-
+                        pedido = in.nextLine();
+                        listaDePedidos.remove(pedido);
                         break;
                 case 0: System.out.println("Tchau! Obrigada por utilizar nosso app!!");
                         break;

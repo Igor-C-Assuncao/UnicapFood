@@ -25,7 +25,8 @@ public class GerenciadorDeItems {
         listaDeItens.add(new Bebidas(itemNovo.getNome(),itemNovo.getPreco(), itemNovo.getTamanho()));
         }
       }
-      public void adicionarPrato(Pratos itemNovo){
+    
+    public void adicionarPrato(Pratos itemNovo){
 
         if (!itemExistente(itemNovo.getNome())){
           listaDeItens.add(new Pratos(itemNovo.getNome(),itemNovo.getPreco(), itemNovo.getQntPessoasServidas()));
