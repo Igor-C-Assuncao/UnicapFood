@@ -1,13 +1,11 @@
 package unicapfood.pedidos;
 
-import unicapfood.Clientes.Cliente;
-
 public class Comanda {
-    private Cliente cliente;
+    private int cpf;
     private int nComanda;
 
-    public Comanda(Cliente cliente, int nComanda) {
-        this.cliente = cliente;
+    public Comanda(int cpf, int nComanda) {
+        this.cpf = cpf;
         this.nComanda = nComanda;
     }
     
