@@ -10,10 +10,6 @@ public class GerenciadorDeItems {
       this.listaDeItens = new ArrayList();
     }
     
-
-
-   
-    
     public boolean itemExistente(String nome){
       for(Itens checarItem:listaDeItens ){
         if (checarItem.getNome() == nome ){
@@ -35,6 +31,10 @@ public class GerenciadorDeItems {
           listaDeItens.add(new Pratos(itemNovo.getNome(),itemNovo.getPreco(), itemNovo.getQntPessoasServidas()));
           }
         }
+
+    public void exibirItens() {
+      System.out.println(listaDeItens);
+    }
   
 }
     

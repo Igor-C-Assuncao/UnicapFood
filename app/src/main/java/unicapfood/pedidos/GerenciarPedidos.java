@@ -25,6 +25,6 @@ public class GerenciarPedidos {
   }
 
   public void exibirPedidos() {
-    
+    System.out.println(listaDePedidos);
   }
 }
