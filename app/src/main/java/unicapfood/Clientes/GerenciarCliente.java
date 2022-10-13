@@ -10,9 +10,9 @@ public class GerenciarCliente {
       this.clienteLista = new ArrayList();
     }
     
-    public boolean clienteExistente(String nome){
+    public boolean clienteExistente(int cpf){
       for(Cliente checarCLiente:clienteLista ){
-        if (checarCLiente.getNome() == nome ){
+        if (checarCLiente.getCpf() == cpf ){
           return true;
         }
       }
@@ -20,11 +20,16 @@ public class GerenciarCliente {
     }
 
     public void adicionarUsuario(Cliente clienteNovo){
-
-      if (!clienteExistente(clienteNovo.getNome())){
+      if (!clienteExistente(clienteNovo.getCpf())){
           clienteLista.add(new Cliente(clienteNovo.getNome(),clienteNovo.getCpf(), clienteNovo.getSenha()));
         }
       }
+
+    public void buscarCliente(Cliente clienteNovo) {
+      if (!clienteExistente(clienteNovo.getCpf())){
+        
+      }
+    }
 
     @Override
     public String toString() {

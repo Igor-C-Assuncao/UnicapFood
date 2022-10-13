@@ -35,15 +35,16 @@ public class MenuApp {
                         nomeCliente = in.nextLine();
                         System.out.println("Insira seu CPF: ");
                         cpf = in.nextInt();
-                        System.out.println("Insira sua senha: ");
+                        System.out.println("Crie uma senha: ");
                         senha = in.nextLine();
                         clienteNovo = new Cliente(nomeCliente, cpf, senha);
                         clienteLista.adicionarUsuario(clienteNovo);
                         break;
-                case 2: //gerar comanda (gerar um número novo aleatório ou no contador)
+                case 2: //gerar comanda (gerar um número novo no contador)
                         nComanda = nComanda + 1;
                         System.out.println("Insira seu cpf: ");
                         cpf = in.nextInt();
+                        clienteLista.buscarCliente(cpf);
                         System.out.println("O número da sua comanda será: "+ nComanda);
                         comanda = new Comanda(cpf, nComanda);
                         break;
@@ -73,12 +74,15 @@ public class MenuApp {
                         switch (op2) {
                                 case 1: //pagamento no crédito
                                         System.out.println("Pagamento Aprovado");
+                                        listaDePedidos.clear();
                                         break;
                                 case 2: //pagamento no dédito
                                         System.out.println("Pagamento Aprovado");
+                                        listaDePedidos.clear();
                                         break;
                                 case 3: //pagamento no pix
                                         System.out.println("Pagamento Aprovado");
+                                        listaDePedidos.clear();
                                         break;
                                 default: System.out.println("Opção inválida!");
                                         break;
