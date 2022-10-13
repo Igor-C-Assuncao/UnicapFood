@@ -19,10 +19,12 @@ public class MenuApp {
         
 
         int op, op2;
-        String nomeCliente, pedido, senha;
+        String nomeCliente, pedidoNovo, senha;
+        Comanda comanda;
         Cliente clienteNovo;
         int cpf;
         int nComanda = 0;
+
 
         do {
             exibeMenu();
@@ -43,12 +45,13 @@ public class MenuApp {
                         System.out.println("Insira seu cpf: ");
                         cpf = in.nextInt();
                         System.out.println("O número da sua comanda será: "+ nComanda);
-                        nComanda = new Comanda(cpf, nComanda);
+                        comanda = new Comanda(cpf, nComanda);
+                        comanda.setNumero(nComanda);
                         break;
                 case 3: //realizar pedido (adicionar um item novo no final da lista)
                         System.out.println("Insira seu pedido: ");
-                        pedido = in.nextLine();
-
+                        pedidoNovo = in.nextLine();
+                        pedidoNovo.adicionarPedido(pedidoNovo);
                         break;
                 case 4: //ver carpadio 
                         System.out.println("Cardapio: ");
