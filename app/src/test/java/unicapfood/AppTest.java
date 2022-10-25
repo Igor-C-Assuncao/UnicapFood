@@ -3,20 +3,20 @@
  */
 package unicapfood;
 
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.Test;
 
 import unicapfood.Clientes.Cliente;
 import unicapfood.Clientes.GerenciarCliente;
 
-import static org.junit.jupiter.api.Assertions.*;
+// import static org.junit.jupiter.api.Assertions.*;
 
 class AddCliente {
     
-    @Test void clienteAdd() {
-        GerenciarCliente addtest = new GerenciarCliente();
-        Cliente cliente1 = new Cliente("carol", 0011122233 , "1234");
-        Cliente expected = new Cliente("carol", 0011122233 , "1234");
+//     @Test void clienteAdd() {
+//         GerenciarCliente addtest = new GerenciarCliente();
+//         Cliente cliente1 = new Cliente("carol", 0011122233 , "1234");
+//         Cliente expected = new Cliente("carol", 0011122233 , "1234");
         
-        assertEquals(cliente1,expected);
-    }
-}
+//         assertEquals(cliente1,expected);
+//     }
+ }
