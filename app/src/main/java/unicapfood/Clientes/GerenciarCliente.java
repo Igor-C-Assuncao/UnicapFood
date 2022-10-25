@@ -2,6 +2,8 @@ package unicapfood.Clientes;
 
 import java.util.ArrayList;
 
+import unicapfood.Exceptions.ClienteNaoEncotradoExepition;
+
 public class GerenciarCliente {
 
     private ArrayList<Cliente> clienteLista;
@@ -25,11 +27,19 @@ public class GerenciarCliente {
         }
       }
 
-    public void buscarCliente(Cliente clienteNovo) {
-      if (!clienteExistente(clienteNovo.getCpf())){
-        
+    public Cliente buscarCliente(int cpf) throws Exception {
+      if (!clienteExistente(cpf)){
+        throw new ClienteNaoEncotradoExepition();
       }
+      for(Cliente checarCLiente:clienteLista ){
+        if (checarCLiente.getCpf() == cpf ){
+
+          return checarCLiente;
+        }
+
     }
+      return null;
+  }
 
     @Override
     public String toString() {

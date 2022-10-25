@@ -15,6 +15,8 @@ public class Pedido implements Comparable <Pedido>{
         this.preco = preco;
     }
 
+    
+
     public String getItem() {
         return item;
     }
