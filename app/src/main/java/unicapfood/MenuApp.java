@@ -15,11 +15,7 @@ public class MenuApp {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner (System.in);
         
-        // ArrayList<Cliente> clienteLista;
-        // ArrayList<Pedido> pedidos;
-        // ArrayList<IEstabelecimento> estabelecimentoLista;
-        // ArrayList<Itens> listaDeItens;
-
+       
         GerenciadorDeItems itens = new GerenciadorDeItems();
         GerenciarCliente clientes = new GerenciarCliente();
         GerenciarPedidos pedidos = new GerenciarPedidos();
@@ -72,11 +68,11 @@ public class MenuApp {
                         break;
                 case 5: //exibir a parcial (mostrar todos os itens pedidos até o momento)
                         System.out.println("Parcial da comanda "+ nComanda + ":");
-                        pedidos.exibirPedidos();
+                        pedidos.toString();
                         break;
                 case 6: //fechar a comanda e realizar pagamento
                         System.out.println("Seus pedidos foram: ");
-                        pedidos.exibirPedidos();
+                        pedidos.toString();
                         System.out.println(" ");
                         System.out.println("Escolha uma forma de pagamento: ");
                         System.out.println("1- Crédito");
