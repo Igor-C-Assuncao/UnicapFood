@@ -54,4 +54,9 @@ public void fecharMesa(){
   public void exibirPedidos() {
     System.out.println(listaDePedidos);
   }
+
+  @Override
+  public String toString() {
+    return "GerenciarPedidos [listaDePedidos=" + listaDePedidos + "]";
+  }
 }
