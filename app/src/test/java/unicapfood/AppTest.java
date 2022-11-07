@@ -3,10 +3,8 @@
  */
 package unicapfood;
 
-// import org.junit.jupiter.api.Test;
-
-import unicapfood.Clientes.Cliente;
-import unicapfood.Clientes.GerenciarCliente;
+import unicapfood.Negocio.Clientes.Cliente;
+import unicapfood.Negocio.Clientes.GerenciarCliente;
 
 // import static org.junit.jupiter.api.Assertions.*;
 
