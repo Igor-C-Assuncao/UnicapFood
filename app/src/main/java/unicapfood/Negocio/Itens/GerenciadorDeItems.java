@@ -1,4 +1,4 @@
-package unicapfood.Itens;
+package unicapfood.Negocio.Itens;
 
 import java.util.ArrayList;
 

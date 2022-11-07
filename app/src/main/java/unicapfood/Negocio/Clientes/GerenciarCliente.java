@@ -1,8 +1,9 @@
-package unicapfood.Clientes;
+package unicapfood.Negocio.Clientes;
 
 import java.util.ArrayList;
 
-import unicapfood.Exceptions.ClienteNaoEncotradoExepition;
+import unicapfood.Negocio.Exceptions.ClienteNaoEncotradoExepition;
+
 
 public class GerenciarCliente {
 

@@ -1,4 +1,4 @@
-package unicapfood.Exceptions;
+package unicapfood.Negocio.Exceptions;
 
 public class ClienteNaoEncotradoExepition extends Exception  {
 

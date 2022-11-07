@@ -1,4 +1,4 @@
-package unicapfood.Estabelecimento;
+package unicapfood.Negocio.Estabelecimento;
 
 public interface IEstabelecimento {
 

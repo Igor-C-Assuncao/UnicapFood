@@ -1,8 +1,10 @@
-package unicapfood.pedidos;
+package unicapfood.Negocio.pedidos;
 
 import java.util.ArrayList;
 
-import unicapfood.Exceptions.PedidoInexistenteExeption;
+import unicapfood.Negocio.Exceptions.PedidoInexistenteExeption;
+
+
 
 public class GerenciarPedidos {
   private ArrayList<Pedido> listaDePedidos;
