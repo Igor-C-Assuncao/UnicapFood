@@ -4,4 +4,5 @@
 
 # Ignore Gradle build output directory
 build
-app/bin/main/unicapfood/MenuApp.class
+
+/bin
