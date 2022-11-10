@@ -2,7 +2,7 @@ package unicapfood.UI;
 
 import java.util.Scanner;
 
-
+import unicapfood.Negocio.Fachada;
 import unicapfood.Negocio.Clientes.Cliente;
 import unicapfood.Negocio.Clientes.GerenciarCliente;
 import unicapfood.Negocio.Itens.GerenciadorDeItems;
@@ -16,9 +16,9 @@ public class MenuApp {
         Scanner in = new Scanner (System.in);
         
        
-        GerenciadorDeItems itens = new GerenciadorDeItems();
-        GerenciarCliente clientes = new GerenciarCliente();
-        GerenciarPedidos pedidos = new GerenciarPedidos();
+   
+
+        Fachada fachada = new Fachada();
         int op, op2,numeroPedido = 0;
         String nomeCliente, senha,item;
         Comanda comanda;
@@ -39,16 +39,17 @@ public class MenuApp {
                         nomeCliente = in.nextLine();
                         System.out.println("Insira seu CPF: ");
                         cpf = in.nextInt();
+                        in.nextInt();
                         System.out.println("Crie uma senha: ");
                         senha = in.nextLine();
                         clienteNovo = new Cliente(nomeCliente, cpf, senha);
-                        clientes.adicionarUsuario(clienteNovo);
+                        fachada.adicionarUsuario(clienteNovo);
                         break;
                 case 2: //gerar comanda (gerar um número novo no contador)
                         nComanda = nComanda + 1;
                         System.out.println("Insira seu cpf: ");
                         cpf = in.nextInt();
-                        clientes.buscarCliente(cpf);
+                        fachada.buscarCliente(cpf);
                         System.out.println("O número da sua comanda será: "+ nComanda);
                         comanda = new Comanda(cpf, nComanda);
                         break;
@@ -60,15 +61,15 @@ public class MenuApp {
                         System.out.println(" Preço :");
                         preco = in.nextInt();
                         pedidoNovo = new Pedido(item, numeroPedido, preco);
-                        pedidos.adicionarPedido(pedidoNovo);
+                        fachada.adicionarPedido(pedidoNovo);
                         break;
                 case 4: //ver carpadio 
                         System.out.println("Cardapio: ");
-                        itens.exibirItens();
+                        fachada.exibirItens();
                         break;
                 case 5: //exibir a parcial (mostrar todos os itens pedidos até o momento)
                         System.out.println("Parcial da comanda "+ nComanda + ":");
-                        pedidos.toString();
+                        fachada.toString();
                         break;
                 case 6: //fechar a comanda e realizar pagamento
                         System.out.println("Seus pedidos foram: ");
@@ -83,15 +84,15 @@ public class MenuApp {
                         switch (op2) {
                                 case 1: //pagamento no crédito
                                         System.out.println("Pagamento Aprovado");
-                                        pedidos.fecharMesa();
+                                        fachada.fecharMesa();
                                         break;
                                 case 2: //pagamento no dédito
                                         System.out.println("Pagamento Aprovado");
-                                        pedidos.fecharMesa();
+                                        fachada.fecharMesa();
                                         break;
                                 case 3: //pagamento no pix
                                         System.out.println("Pagamento Aprovado");
-                                        pedidos.fecharMesa();
+                                        fachada.fecharMesa();
                                         break;
                                 default: System.out.println("Opção inválida!");
                                         break;
@@ -100,7 +101,7 @@ public class MenuApp {
                 case 7: //cancelar pedido (remover algum item da lista) 
                         System.out.println("Insira o numero do pedido você gostaria de retirar: ");
                         int nPedido = in.nextInt();
-                        Pedido pedidoBuscado = pedidos.buscarPedido(nPedido);
+                        Pedido pedidoBuscado = fachada.buscarPedido(nPedido);
                         pedidos.excluirPedido(pedidoBuscado);                        
                         pedidos.fecharMesa();
                         break;
