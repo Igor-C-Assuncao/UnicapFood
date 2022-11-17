@@ -73,7 +73,7 @@ public class MenuApp {
                         break;
                 case 6: //fechar a comanda e realizar pagamento
                         System.out.println("Seus pedidos foram: ");
-                        pedidos.toString();
+                        fachada.toString();
                         System.out.println(" ");
                         System.out.println("Escolha uma forma de pagamento: ");
                         System.out.println("1- Crédito");
@@ -102,8 +102,8 @@ public class MenuApp {
                         System.out.println("Insira o numero do pedido você gostaria de retirar: ");
                         int nPedido = in.nextInt();
                         Pedido pedidoBuscado = fachada.buscarPedido(nPedido);
-                        pedidos.excluirPedido(pedidoBuscado);                        
-                        pedidos.fecharMesa();
+                        fachada.excluirPedido(pedidoBuscado);                        
+                        fachada.fecharMesa();
                         break;
                 case 0: System.out.println("Tchau! Obrigada por utilizar nosso app!!");
                         break;
