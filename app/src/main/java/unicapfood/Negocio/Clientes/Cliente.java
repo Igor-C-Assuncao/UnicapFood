@@ -1,10 +1,13 @@
 package unicapfood.Negocio.Clientes;
 
+import unicapfood.Negocio.Estabelecimento.IEstabelecimento;
+
 public class Cliente {
 
     private String nome;
     private int cpf;
     private String senha;
+    private IEstabelecimento estabelecimento;
     
     public Cliente(String nome, int cpf, String senha) {
         this.nome = nome;
