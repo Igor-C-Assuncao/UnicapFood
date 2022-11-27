@@ -2,63 +2,48 @@ package unicapfood.Negocio.pedidos;
 
 import java.util.ArrayList;
 
+import unicapfood.Data.RepositorioPedido;
 import unicapfood.Negocio.Exceptions.PedidoInexistenteExeption;
 
 
 
 public class GerenciarPedidos {
-  private ArrayList<Pedido> listaDePedidos;
+ 
 
-  public GerenciarPedidos() {
-    this.listaDePedidos = new ArrayList();
-  }
+  private RepositorioPedido rPedido;
+
+ 
     
   public boolean pedidoExistente(int numero){
-    for(Pedido checarPedido: listaDePedidos  ){
-      if (checarPedido.getNumero() == numero ){
-        return true;
-      }
-    }
-    return false;
+    return rPedido.pedidoExistente(numero);
   }
 
   public void adicionarPedido(Pedido pedidoNovo){
-    if (!pedidoExistente(pedidoNovo.getNumero())){
-      listaDePedidos.add(new Pedido(pedidoNovo.getItem(),pedidoNovo.getNumero(), pedidoNovo.getPreco()));
-    }
+    rPedido.adicionarPedido(pedidoNovo);
   }
 
   public void excluirPedido (Pedido pedidoAExcluir){
 
-    listaDePedidos.remove(pedidoAExcluir);
+   rPedido.excluirPedido(pedidoAExcluir);
 
   }
 
   public Pedido buscarPedido(int numeroPedido) throws Exception {
-    if (!pedidoExistente(numeroPedido)){
-      throw new PedidoInexistenteExeption();
-    }
-    for(Pedido checarPedido:listaDePedidos ){
-      if (checarPedido.getNumero() == numeroPedido){
-
-        return checarPedido;
-      }
-
-  }
-    return null;
+  
+    return rPedido.buscarPedido(numeroPedido);
 }
 
 public void fecharMesa(){
 
-  listaDePedidos.clear();
+ rPedido.fecharMesa();
 }
 
   public void exibirPedidos() {
-    System.out.println(listaDePedidos);
+  rPedido.exibirPedidos();
   }
 
-  @Override
+ 
   public String toString() {
-    return "GerenciarPedidos [listaDePedidos=" + listaDePedidos + "]";
+    return rPedido.toString();
   }
 }
