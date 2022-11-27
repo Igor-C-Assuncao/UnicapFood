@@ -2,31 +2,21 @@ package unicapfood.Negocio.Estabelecimento;
 
 import java.util.ArrayList;
 
+import unicapfood.Data.RepositorioEstabelecimento;
+
 public class GerenciarEstabelecimento {
 
-    private ArrayList<IEstabelecimento> estabelecimentoLista;
+private RepositorioEstabelecimento rEstabelecimento;
 
-    public GerenciarEstabelecimento() {
-      this.estabelecimentoLista = new ArrayList();
+    public boolean estabelecimenmtoExistente(String nome){
+      
+      return rEstabelecimento.estabelecimenmtoExistente(nome);
     }
-    
 
-    // public boolean clienteExistente(String nome){
-    //   for(IEstabelecimento checarEstabelecimento : estabelecimentoLista ){
-    //     if (checarEstabelecimento.getNome() == nome ){
-    //       return true;
-    //     }
-    //   }
-    //   return false;
-    // }
+    public void  estabelecimenmtoNovo(Estabelecimento estabelecimenmtoNovo){
 
-    // public void adicionarUsuario(Cliente clienteNovo){
+      rEstabelecimento.estabelecimenmtoNovo(estabelecimenmtoNovo);
 
-    //   if (!clienteExistente(clienteNovo.getNome())){
-    //       clienteLista.add(new Cliente(clienteNovo.getNome(),clienteNovo.getCpf(), clienteNovo.getSenha()));
-    //     }
-    //   }
-
-
+    }
     
 }

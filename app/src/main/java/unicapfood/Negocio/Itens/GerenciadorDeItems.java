@@ -2,39 +2,31 @@ package unicapfood.Negocio.Itens;
 
 import java.util.ArrayList;
 
+import unicapfood.Data.RepositorioItens;
+
 public class GerenciadorDeItems {
 
-    private ArrayList<Itens> listaDeItens;
+    
 
-    public GerenciadorDeItems() {
-      this.listaDeItens = new ArrayList();
-    }
+    private RepositorioItens rItens;
+
     
     public boolean itemExistente(String nome){
-      for(Itens checarItem:listaDeItens ){
-        if (checarItem.getNome() == nome ){
-          return true;
-        }
-      }
-      return false;
+        return rItens.itemExistente(nome);
     }
 
     public void adicionarBebidas(Bebidas itemNovo){
 
-      if (!itemExistente(itemNovo.getNome())){
-        listaDeItens.add(new Bebidas(itemNovo.getNome(),itemNovo.getPreco(), itemNovo.getTamanho()));
-        }
+      rItens.adicionarBebidas(itemNovo);
       }
     
     public void adicionarPrato(Pratos itemNovo){
 
-        if (!itemExistente(itemNovo.getNome())){
-          listaDeItens.add(new Pratos(itemNovo.getNome(),itemNovo.getPreco(), itemNovo.getQntPessoasServidas()));
-          }
-        }
+      rItens.adicionarPrato(itemNovo);
+    }
 
     public void exibirItens() {
-      System.out.println(listaDeItens);
+    rItens.exibirItens();
     }
   
 }
