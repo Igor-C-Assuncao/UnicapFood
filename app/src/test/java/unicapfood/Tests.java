@@ -18,32 +18,20 @@ public class Tests {
     public void create(){
         this.cliente = new Cliente( "carol", 123456, "1234");
         this.credito = new Credito("visa", 100, true);
-        
     }
 
     @Test
     public void addCliente(){
-
         String expected = "carol" ;
-
         String actual = cliente.getNome();
-
-        assertEquals(expected, actual);
-
-        
-       
-        
+        assertEquals(expected, actual);       
     }
 
     @Test
     public void testaTaxa(){
-
-         credito.taxaCredito();
+        credito.taxaCredito();
         double actual = credito.getValor();
         double expected = 110;
-
         assertEquals(expected,actual );
-        
     }
-    
 }
