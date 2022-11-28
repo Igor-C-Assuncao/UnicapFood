@@ -14,6 +14,8 @@ import unicapfood.Negocio.pedidos.Pedido;
 public class MenuApp {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner (System.in);
+        Scanner incpf = new Scanner (System.in);
+        Scanner instring = new Scanner (System.in);
         
        
    
@@ -38,10 +40,9 @@ public class MenuApp {
                         System.out.println("Insira seu nome: ");
                         nomeCliente = in.nextLine();
                         System.out.println("Insira seu CPF: ");
-                        cpf = in.nextInt();
-                        in.nextInt();
+                        cpf = incpf.nextInt();
                         System.out.println("Crie uma senha: ");
-                        senha = in.nextLine();
+                        senha = instring.nextLine();
                         clienteNovo = new Cliente(nomeCliente, cpf, senha);
                         fachada.adicionarUsuario(clienteNovo);
                         break;
